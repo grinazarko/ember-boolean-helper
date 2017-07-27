@@ -1,26 +1,84 @@
 # ember-boolean-helper
 
-This README outlines the details of collaborating on this Ember addon.
+This very simple component allow compare values and using boolean operator like 'and', 'or' 
+and others in Handlebars templates in Ember JS application.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-boolean-helper`
-* `npm install`
+* `npm install ember-boolean-helper`
 
-## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## Usage
 
-## Running Tests
+After installation you can just use following helpers in your Handlebars templates. In logical 
+helpers (and, or) empty string, empty array, zero, null and undefined are false, every 
+other values are true.
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+### and
 
-## Building
+The helper returns true if all arguments are true. 
 
-* `ember build`
+```
+{{#if (and 42 true 'item')}
+  {{log 'All arguments are true!'}}
+{{/if}}
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+```
+Waits at least two arguments.
+
+###or
+
+The helper returns true if at least one argument is true. 
+
+```
+{{#if (or 42 null undefined '')}
+  {{log 'There are true among arguments!'}}
+{{/if}}
+
+```
+```
+{{#unless (or 0 null undefined '')}
+  {{log 'There's no true among arguments!'}}
+{{/unless}}
+
+```
+Waits at least two arguments.
+
+###eq
+
+The helper returns true if all arguments are strictly equal. 
+
+```
+{{#if (eq 42 42 42)}
+  {{log 'All arguments are equal!'}}
+{{/if}}
+
+```
+```
+{{#unless (eq 'foo' 'bar')}
+  {{log 'Arguments aren't equal!'}}
+{{/unless}}
+
+```
+Waits at least two arguments.
+
+###gt
+
+The helper returns true if the first argument strictly greater than the second. 
+
+```
+{{#if (gt 42 4)}
+  {{log 'The first argument strictly greater than the second!'}}
+{{/if}}
+
+```
+
+Waits strictly two arguments.
+
+###gt-or-eq
+
+The helper returns true if the first argument greater or equal the second. 
+Waits strictly two arguments.
+
+
+
