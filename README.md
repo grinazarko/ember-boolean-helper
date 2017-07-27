@@ -26,7 +26,7 @@ The helper returns true if all arguments are true.
 ```
 Waits at least two arguments.
 
-###or
+### or
 
 The helper returns true if at least one argument is true. 
 
@@ -44,7 +44,7 @@ The helper returns true if at least one argument is true.
 ```
 Waits at least two arguments.
 
-###eq
+### eq
 
 The helper returns true if all arguments are strictly equal. 
 
@@ -62,7 +62,7 @@ The helper returns true if all arguments are strictly equal.
 ```
 Waits at least two arguments.
 
-###gt
+### gt
 
 The helper returns true if the first argument strictly greater than the second. 
 
@@ -75,7 +75,7 @@ The helper returns true if the first argument strictly greater than the second.
 
 Waits strictly two arguments.
 
-###gt-or-eq
+### gt-or-eq
 
 The helper returns true if the first argument greater or equal the second. 
 Waits strictly two arguments.
